@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diary</title>
+
+  <link rel="stylesheet" href="/css/diary.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="page" id="frontPage">
+      <div class="cover">
+        <img src="/images/kittybeach.jpeg" alt="Diary Cover" />
+      </div>
+      <h1><i class="fas fa-book-open"></i> My Diary</h1>
+      <p class="date-time"><i class="far fa-clock"></i> Today's Date: <span id="currentDateTime"></span></p>
+      <div class="flip-button">Flip</div>
+    </div>
+
+    <div class="page" id="backPage">
+      <h1><i class="fas fa-book-open"></i> Dear Diary,</h1>
+
+      <div class="entry">
+        <p class="entry-date">June 22, 2023</p>
+        <p id="entry1" contenteditable="true">In the depths of despair, lost dreams echo...</p>
+      </div>
+
+      <div class="entry">
+        <p class="entry-date">June 24, 2023</p>
+        <p id="entry2" contenteditable="true">A heartache so profound, it suffocates the spirit...</p>
+      </div>
+
+      <div class="flip-button">Flip</div>
+    </div>
+  </div>
+
+  <!-- JS는 맨 아래에서 로드해야 안전하게 DOM 접근 가능 -->
+  <script src="/js/diary.js"></script>
+</body>
+</html>

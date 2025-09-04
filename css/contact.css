@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+
+.contact-section{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center; 
+}
+
+.contact-section h2 {
+  font-size: 2rem;
+  margin-top: 5%;
+  /* margin-left: 30%; */
+  width: fit-content;
+  text-align: center;
+  transform: translateX(195px);
+} 
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem 1.5rem;
+    margin: 1rem 0;
+    font-size: 1.6rem;
+    border-radius: 2rem;
+    border: 2px solid #FF1493;
+    background-color: black;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 0.2rem;
+    transition: 0.3s ease;
+}
+
+.contact-section input::placeholder,
+.contact-section textarea::placeholder {
+    color: white;
+}
+
+.contact-section textarea {
+    height: 150px;
+    resize: none;
+}
+
+.contact-section button {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background-color: black;
+    border-radius: 4rem;
+    font-size: 1.6rem;
+    color:#FF1493;
+    letter-spacing: 0.3rem;
+    font-weight: 600;
+    border: 2px solid #FF1493;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.contact-section button:hover{
+    transform: scale3d(1.03);
+    background-color: #FF1493;
+    color: black;
+    box-shadow: 0 0 25px #CD5C5C;
+}
+
+
+.contact-section,
+.map-container {
+  margin: 50px auto 50px auto; /* top, right, bottom, left */
+  width: 100%;
+  max-width: 600px;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.contact-section,
+.map-container {
+  margin: 0 auto;
+  margin-top: 50px; 
+}
+
+
+.map-container iframe {
+  border-radius: 20px; /* 원하는 만큼 조절 가능 */
+  overflow: hidden;
+}
+
+
+
