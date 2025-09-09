@@ -9,7 +9,8 @@
   position: relative;
   overflow: hidden;
   border-radius: 2rem;
-  transform-style: preserve-3d; /* 3D 컨텍스트 유지 */
+  transform-style: preserve-3d;
+  /* 3D 컨텍스트 유지 */
 }
 
 .page {
@@ -74,7 +75,8 @@ h1 {
 
 /* 다이어리 항목 */
 .entry {
-  margin-bottom: 30px; /* 엔트리 간 간격 */
+  margin-bottom: 30px;
+  /* 엔트리 간 간격 */
 }
 
 .entry-date {

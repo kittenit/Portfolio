@@ -1,139 +1,177 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <link rel="stylesheet" href="/css/all.css">
-    <link rel="stylesheet" href="/css/main.css">
-   
-    <script src="/js/music.js"></script>
-    
-    <title>Portfolio</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="/css/all.css">
+  <link rel="stylesheet" href="/css/main.css">
+
+  <script src="/js/music.js"></script>
+
+  <title>Portfolio</title>
+
+  <style>
+    .skills-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .skills-chips span {
+      display: inline-block;
+      padding: 6px 10px;
+      border: 1px solid none;
+      /* 옅은 테두리 */
+      border-radius: 999px;
+      /* 동그란 칩 */
+      background: #FF69B4;
+      color: #fff; 
+      /* 아주 옅은 배경 */
+      font-weight: 600;
+      font-size: 14px;
+    }
+  </style>
+
+
 </head>
-<body>
-    <header>
-        <a href="Main.html" class="logo">JIHYUN</a>
 
-        <!-- <nav>
+</style>
+
+<body>
+  <header>
+    <a href="Main.html" class="logo">JIHYUN</a>
+
+    <!-- <nav>
             <a href="#" class="active">Home</a>
             <a href="#" >Fav</a>
             <a href="#" >Study</a>
             <a href="#" >Diary</a>
             <a href="#" >Contact</a>
         </nav> -->
-        <nav>
-        <a href="#" class="active" onclick="loadPage(event, 'home')">Home</a>
-        <a href="#" onclick="loadPage(event, 'fav')">Fav</a>
-        <a href="#" onclick="loadPage(event, 'dev')">Dev</a>
-        <a href="#" onclick="loadPage(event, 'diary')">Diary</a>
-        <a href="#" onclick="loadPage(event, 'contact')">Contact</a>
-        </nav>
-    </header>
+    <nav>
+      <a href="#" class="active" onclick="loadPage(event, 'home')">Home</a>
+      <a href="#" onclick="loadPage(event, 'fav')">Fav</a>
+      <a href="#" onclick="loadPage(event, 'dev')">Dev</a>
+      <a href="#" onclick="loadPage(event, 'diary')">Diary</a>
+      <a href="#" onclick="loadPage(event, 'contact')">Contact</a>
+    </nav>
+  </header>
 
-    <div id="content">
+  <div id="content">
     <section class="home">
-        <div class="home-img">
-            <img src="/images/kittys.jpg" alt="">
-        </div>
-        <div class="home-content">
-            <h1>Hi, It's <span>JIHYUN</span></h1>
-            <h3 class="typing-text">I'm a <span>&nbsp</span></h3>
-            <p>
-                Hello
-            </p>
-            <div class="social-icons">
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-github"></i></a>
+      <div class="home-img">
+        <img src="/images/kittys.jpg" alt="">
+      </div>
+      <div class="home-content">
+        <h1>Hi, It's <span>JIHYUN</span></h1>
+        <h3 class="typing-text">I'm a <span>&nbsp</span></h3>
+
+        <p class="skills-chips">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Java</span>
+          <span>Swift</span>
+          <span>PostgreSQL</span>
+          <span>Oracle SQL</span>
+          <span>MySQL</span>
+        </p>
+
+        <div class="social-icons">
+          <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="#"><i class="fa-brands fa-github"></i></a>
 
 
-        
-         <!-- Play/Stop Button -->
-        <a href="#" class="play-button" onclick="toggleMusic(this)">
-        <i class="fa-solid fa-play"></i>
-        </a>
+
+          <!-- Play/Stop Button -->
+          <a href="#" class="play-button" onclick="toggleMusic(this)">
+            <i class="fa-solid fa-play"></i>
+          </a>
 
         </div>
 
         <!-- 숨겨진 오디오 -->
-         <audio id="myAudio">
-        <source src="/common/Flyday Chinatown.mp3" type="audio/mpeg">
-        Your browser does not support the audio element.
+        <audio id="myAudio">
+          <source src="/common/Flyday Chinatown.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
         </audio>
-        
+
         <a href="#" class="btn">Hire me</a>
-        </div>
+      </div>
 
     </section>
-    </div>
+  </div>
 </body>
 
 
 <script>
-function loadPage(event, page) {
-  event.preventDefault();
+  function loadPage(event, page) {
+    event.preventDefault();
 
-  document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
-  event.target.classList.add("active");
+    document.querySelectorAll("nav a").forEach(link => link.classList.remove("active"));
+    event.target.classList.add("active");
 
-  const fileMap = {
-    home: "Main.html",
-    fav: "Fav.html",
-    dev: "Dev.html",
-    diary: "Diary.html",
-    contact: "Contact.html"
-  };
+    const fileMap = {
+      home: "Main.html",
+      fav: "Fav.html",
+      dev: "Dev.html",
+      diary: "Diary.html",
+      contact: "Contact.html"
+    };
 
-  const fileName = fileMap[page];
-  const content = document.getElementById("content");
+    const fileName = fileMap[page];
+    const content = document.getElementById("content");
 
-  fetch(fileName)
-    .then(response => {
-      if (!response.ok) throw new Error("no files");
-      return response.text();
-    })
-    .then(html => {
-      content.innerHTML = html;
+    fetch(fileName)
+      .then(response => {
+        if (!response.ok) throw new Error("no files");
+        return response.text();
+      })
+      .then(html => {
+        content.innerHTML = html;
 
-      const scripts = content.querySelectorAll("script");
-      const scriptPromises = [];
+        const scripts = content.querySelectorAll("script");
+        const scriptPromises = [];
 
-      scripts.forEach(oldScript => {
-        const newScript = document.createElement("script");
+        scripts.forEach(oldScript => {
+          const newScript = document.createElement("script");
 
-        if (oldScript.src) {
-          newScript.src = oldScript.src;
-          newScript.async = false;
-          const promise = new Promise((resolve) => {
-            newScript.onload = resolve;
-          });
-          scriptPromises.push(promise);
-        } else {
-          newScript.textContent = oldScript.textContent;
-        }
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+            newScript.async = false;
+            const promise = new Promise((resolve) => {
+              newScript.onload = resolve;
+            });
+            scriptPromises.push(promise);
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
 
-        document.body.appendChild(newScript);
-        oldScript.remove();
+          document.body.appendChild(newScript);
+          oldScript.remove();
+        });
+
+        // ✅ 모든 script가 로드된 이후에 init 호출
+        Promise.all(scriptPromises).then(() => {
+          if (page === "diary" && typeof initDiaryPage === "function") {
+            initDiaryPage();
+          }
+          if (page === "dev" && typeof initDevPage === "function") {
+            initDevPage();
+          }
+        });
+      })
+      .catch(error => {
+        content.innerHTML = "<h2>404</h2><p>404</p>";
+        console.error("로드 오류:", error);
       });
-
-      // ✅ 모든 script가 로드된 이후에 init 호출
-      Promise.all(scriptPromises).then(() => {
-        if (page === "diary" && typeof initDiaryPage === "function") {
-          initDiaryPage();
-        }
-        if (page === "dev" && typeof initDevPage === "function") {
-          initDevPage();
-        }
-      });
-    })
-    .catch(error => {
-      content.innerHTML = "<h2>404</h2><p>404</p>";
-      console.error("로드 오류:", error);
-    });
-}
+  }
 
 </script>
 

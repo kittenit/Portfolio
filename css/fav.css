@@ -33,24 +33,24 @@
     margin: 0 10px;
     display: flex;
     align-items: flex-end;
-    transition: .6s cubic-bezier(.28,-0.03,0,.99);
-    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+    transition: .6s cubic-bezier(.28, -0.03, 0, .99);
+    box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
 
     background-repeat: no-repeat;
     background-position: center;
-    
+
     background-size: auto 100%;
 
 
 }
 
-.card > .row {
+.card>.row {
     color: white;
     display: flex;
     flex-wrap: nowrap;
 }
 
-.card > .row > .icon {
+.card>.row>.icon {
     background: #FF1493;
     color: white;
     border-radius: 50%;
@@ -61,7 +61,7 @@
     margin: 15px;
 }
 
-.card > .row > .description {
+.card>.row>.description {
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -72,13 +72,13 @@
     transform: translateY(30px);
     transition-delay: .3s;
     transition: all .3s ease;
-    
+
 }
 
 .description {
-  background: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  border-radius: 0 0 2rem 2rem;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 0 0 2rem 2rem;
 }
 
 .description p {
@@ -94,11 +94,11 @@ input {
     display: none;
 }
 
-input:checked + label {
-   width: 500px;
+input:checked+label {
+    width: 500px;
 }
 
-input:checked + label .description {
+input:checked+label .description {
     opacity: 1 !important;
     transform: translateY(0) !important;
 }
@@ -106,12 +106,15 @@ input:checked + label .description {
 .card[for="c1"] {
     background-image: url('/images/kitty.jpg');
 }
+
 .card[for="c2"] {
     background-image: url('/images/kittys.jpg');
 }
+
 .card[for="c3"] {
     background-image: url('/images/kittybeach.jpeg');
 }
+
 .card[for="c4"] {
     background-image: url('/images/kittydev.png');
 }

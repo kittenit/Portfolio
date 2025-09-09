@@ -186,75 +186,75 @@ class Gallery {
     }
   }
 
- _navigate(dir) {
-  if (this.supportTrans && this.isAnim) return;
+  _navigate(dir) {
+    if (this.supportTrans && this.isAnim) return;
 
-  this.isAnim = true;
+    this.isAnim = true;
 
-  let newCurrent;
+    let newCurrent;
 
-  switch (dir) {
-    case 'next':
-      newCurrent = this.items.indexOf(this.rightItem);
+    switch (dir) {
+      case 'next':
+        newCurrent = this.items.indexOf(this.rightItem);
 
-      this.currentItem.classList.add('dg-transition');
-      this._applyStyles(this.currentItem, this._getCoordinates('left'));
+        this.currentItem.classList.add('dg-transition');
+        this._applyStyles(this.currentItem, this._getCoordinates('left'));
 
-      this.rightItem.classList.add('dg-transition');
-      this._applyStyles(this.rightItem, this._getCoordinates('center'));
-
-      if (this.nextItem) {
-        this.leftItem.classList.add('dg-transition');
-        this._applyStyles(this.leftItem, this._getCoordinates('outleft'));
-
-        this.nextItem.classList.add('dg-transition');
-        this._applyStyles(this.nextItem, this._getCoordinates('right'));
-      } else {
-        this.leftItem.classList.add('dg-transition');
-        this._applyStyles(this.leftItem, this._getCoordinates('right'));
-      }
-      break;
-
-    case 'prev':
-      newCurrent = this.items.indexOf(this.leftItem);
-
-      this.currentItem.classList.add('dg-transition');
-      this._applyStyles(this.currentItem, this._getCoordinates('right'));
-
-      this.leftItem.classList.add('dg-transition');
-      this._applyStyles(this.leftItem, this._getCoordinates('center'));
-
-      if (this.prevItem) {
         this.rightItem.classList.add('dg-transition');
-        this._applyStyles(this.rightItem, this._getCoordinates('outright'));
+        this._applyStyles(this.rightItem, this._getCoordinates('center'));
 
-        this.prevItem.classList.add('dg-transition');
-        this._applyStyles(this.prevItem, this._getCoordinates('left'));
-      } else {
-        this.rightItem.classList.add('dg-transition');
-        this._applyStyles(this.rightItem, this._getCoordinates('left'));
-      }
-      break;
+        if (this.nextItem) {
+          this.leftItem.classList.add('dg-transition');
+          this._applyStyles(this.leftItem, this._getCoordinates('outleft'));
+
+          this.nextItem.classList.add('dg-transition');
+          this._applyStyles(this.nextItem, this._getCoordinates('right'));
+        } else {
+          this.leftItem.classList.add('dg-transition');
+          this._applyStyles(this.leftItem, this._getCoordinates('right'));
+        }
+        break;
+
+      case 'prev':
+        newCurrent = this.items.indexOf(this.leftItem);
+
+        this.currentItem.classList.add('dg-transition');
+        this._applyStyles(this.currentItem, this._getCoordinates('right'));
+
+        this.leftItem.classList.add('dg-transition');
+        this._applyStyles(this.leftItem, this._getCoordinates('center'));
+
+        if (this.prevItem) {
+          this.rightItem.classList.add('dg-transition');
+          this._applyStyles(this.rightItem, this._getCoordinates('outright'));
+
+          this.prevItem.classList.add('dg-transition');
+          this._applyStyles(this.prevItem, this._getCoordinates('left'));
+        } else {
+          this.rightItem.classList.add('dg-transition');
+          this._applyStyles(this.rightItem, this._getCoordinates('left'));
+        }
+        break;
+    }
+
+    // 상태 갱신은 transition 끝난 후에 하도록 변경
+    this.wrapper.addEventListener('transitionend', () => {
+      this.current = newCurrent;  // 현재 인덱스 업데이트
+      this._setItems();
+
+      this.currentItem.classList.add('dg-center');
+      this.items.forEach(item => item.classList.remove('dg-transition'));
+
+      this.isAnim = false;
+    }, { once: true });  // 이벤트 리스너는 한 번만 실행되도록
+
+    if (!this.supportTrans) {
+      this.current = newCurrent;
+      this._setItems();
+      this.currentItem.classList.add('dg-center');
+      this.isAnim = false;
+    }
   }
-
-  // 상태 갱신은 transition 끝난 후에 하도록 변경
-  this.wrapper.addEventListener('transitionend', () => {
-    this.current = newCurrent;  // 현재 인덱스 업데이트
-    this._setItems();
-
-    this.currentItem.classList.add('dg-center');
-    this.items.forEach(item => item.classList.remove('dg-transition'));
-
-    this.isAnim = false;
-  }, { once: true });  // 이벤트 리스너는 한 번만 실행되도록
-
-  if (!this.supportTrans) {
-    this.current = newCurrent;
-    this._setItems();
-    this.currentItem.classList.add('dg-center');
-    this.isAnim = false;
-  }
-}
 
   _startSlideshow() {
     this.slideshow = setTimeout(() => {

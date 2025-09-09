@@ -8,23 +8,29 @@
 }
 
 .dg-wrapper {
-  width: 420px;    /* 기존 320px → 더 크게 */
-  height: 420px;   /* 비율 맞춰서 키움 */
+  width: 420px;
+  /* 기존 320px → 더 크게 */
+  height: 420px;
+  /* 비율 맞춰서 키움 */
   margin: 0 auto;
   position: relative;
   transform-style: preserve-3d;
-  perspective: 1200px; /* 원근감도 조금 강화 */
+  perspective: 1200px;
+  /* 원근감도 조금 강화 */
 }
 
 .dg-wrapper a {
-  width: 420px;    /* 카드 자체 크기도 맞춰 키움 */
-  height: 420px;   /* 비율을 맞춰 조금 더 높게 */
+  width: 420px;
+  /* 카드 자체 크기도 맞춰 키움 */
+  height: 420px;
+  /* 비율을 맞춰 조금 더 높게 */
   display: block;
   position: absolute;
   left: 0;
   top: 0;
   overflow: hidden;
-  border-radius: 12px; /* 모서리도 살짝 크게 */
+  border-radius: 12px;
+  /* 모서리도 살짝 크게 */
 }
 
 
@@ -37,10 +43,12 @@
   max-width: 300%;
   max-height: 300%;
   width: 100%;
-  height: calc(100% - 50px);  /* ← 캡션 50px 공간 확보 */
+  height: calc(100% - 50px);
+  /* ← 캡션 50px 공간 확보 */
   margin: 0;
   display: block;
-  object-fit: contain;        /* 왜곡 없이 프레임 안에 딱 */
+  object-fit: contain;
+  /* 왜곡 없이 프레임 안에 딱 */
   background: #000;
   position: relative;
   z-index: 1;
@@ -48,7 +56,8 @@
 
 /* Portfolio / MyDiary만 <a class="big">로 크게 */
 .dg-wrapper a.big {
-  width: 400px;   /* 조금 크게 (원하면 380x280로) */
+  width: 400px;
+  /* 조금 크게 (원하면 380x280로) */
   height: 300px;
   overflow: hidden;
   border-radius: 10px;
@@ -57,8 +66,10 @@
 .dg-wrapper a.big img {
   width: 100%;
   height: 100%;
-  object-fit: contain;     /* 화면 전체 보이게 */
-  background: #000;        /* 레터박스 배경 */
+  object-fit: contain;
+  /* 화면 전체 보이게 */
+  background: #000;
+  /* 레터박스 배경 */
 }
 
 /* ------- 캡션 (div) ------- */
@@ -66,7 +77,8 @@
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;               /* 하단에 고정 */
+  bottom: 0;
+  /* 하단에 고정 */
   height: 50px;
   line-height: 50px;
   text-align: center;
@@ -86,10 +98,14 @@
     0 0 102px #fff,
     0 0 151px #fff;
 
-  background: linear-gradient(transparent, rgba(0,0,0,.6)); /* 하단 그라데이션 */
-  z-index: 2;              /* 이미지 위로 */
-  pointer-events: none;    /* 캡션이 클릭 막지 않게 */
-  display: none;           /* 기본은 숨김 */
+  background: linear-gradient(transparent, rgba(0, 0, 0, .6));
+  /* 하단 그라데이션 */
+  z-index: 2;
+  /* 이미지 위로 */
+  pointer-events: none;
+  /* 캡션이 클릭 막지 않게 */
+  display: none;
+  /* 기본은 숨김 */
 }
 
 /* 중앙 카드에서만 캡션 보이게 (원래 로직 유지) */
@@ -108,13 +124,15 @@
   z-index: 1000;
   left: 50%;
   margin-left: -29px;
-  
-  bottom: 20px; /* 조금 위로 올림 */
+
+  bottom: 20px;
+  /* 조금 위로 올림 */
   margin-bottom: 100px;
 
   display: flex;
   justify-content: center;
-  gap: 10px; /* 버튼 사이 간격 */
+  gap: 10px;
+  /* 버튼 사이 간격 */
   /* margin-top: 20px;  필요 없으면 제거 */
 }
 
@@ -127,11 +145,11 @@
   justify-content: center;
   width: 40px;
   aspect-ratio: 1;
-  background-color:#FF1493;
+  background-color: #FF1493;
   border-radius: 30%;
   box-shadow:
     /* -4px -4px 8px #fff, */
-    4px 4px 8px rgba(0,0,0,0.8);
+    4px 4px 8px rgba(0, 0, 0, 0.8);
   position: relative;
   background-repeat: no-repeat;
   background-position: center;
